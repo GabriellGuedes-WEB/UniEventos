@@ -165,10 +165,8 @@ Utilizada para simular o consumo de uma API REST externa.
 
 O gerenciamento das tarefas foi realizado utilizando GitHub Projects no formato Kanban, contendo as etapas:
 
-* Backlog
 * To Do
 * In Progress
-* Review
 * Done
 
 ---
