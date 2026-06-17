@@ -11,6 +11,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Nova regra: força a quebra de palavras muito longas */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 body {
@@ -72,7 +75,52 @@ body {
 .event-card span { display: block; font-size: 0.9rem; color: #666; margin-bottom: 0.3rem; }
 .badge { background-color: var(--orange-accent); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; display: inline-block; margin-bottom: 1rem; }
 
+/* ------------------------------------------- */
+/* AJUSTES DE RESPONSIVIDADE (MOBILE)          */
+/* ------------------------------------------- */
 @media (max-width: 768px) {
-  .navbar { flex-direction: column; gap: 1rem; }
-  .filters { flex-direction: column; }
+  /* Empilha a barra de navegação e centraliza */
+  .navbar { 
+    flex-direction: column; 
+    gap: 1rem; 
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Coloca os links um embaixo do outro com bastante espaço para o toque do dedo */
+  .navbar-links { 
+    flex-direction: column; 
+    gap: 1rem; 
+    width: 100%;
+  }
+
+  /* Oculta a barra separadora "|" no mobile para ficar mais limpo */
+  .navbar-links span:nth-child(4) {
+    display: none;
+  }
+
+  /* Deixa o botão de Sair da mesma largura dos outros itens */
+  .navbar-links button {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  /* Ajustes no painel inicial (Hero) para evitar cortes */
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Reduz o espaçamento interno do formulário para dar mais espaço aos campos */
+  .form-container { 
+    padding: 1.5rem 1rem; 
+    width: 95%; 
+  }
+
+  /* Empilha a barra de pesquisa e o filtro de categoria */
+  .filters { 
+    flex-direction: column; 
+  }
 }
