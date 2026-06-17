@@ -11,6 +11,7 @@ const ApiPosts = () => {
       try {
         const response = await api.get('/posts?_limit=3');
         setPosts(response.data);
+      // eslint-disable-next-line no-unused-vars
       } catch (err) {
         setError('Falha ao carregar os informativos da API.');
       } finally {
